@@ -1,0 +1,6 @@
+order:
+  - main.sty
+  - factoid.package.sty
+  - analysis.sty
+  - algebra.sty
+  - factoids.sty

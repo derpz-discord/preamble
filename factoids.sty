@@ -1,0 +1,31 @@
+\DeclareFactoid{riemannsum}{%
+\ensuremath{
+    \int^b_a f(x) \dd{x} = \lim_{n \to \infty}~\sum_{k=1}^n \frac{b-a}{n} * f\left(a + \frac{(b-a)*k}{n}\right)
+    }
+}
+
+\DeclareFactoid{original}{
+Please provide the original question. Please also provide any definitions being used.
+Any non-standard notation should also be defined.
+}
+
+\DeclareFactoid{derivative}{
+    \ensuremath{
+        f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
+    }
+}
+
+\DeclareFactoid{differentiable}{
+If $f$ is differentiable at $c$ then the derivative of $f$ at $c$ is given by
+    \begin{align*}
+        f'(c) = \lim_{x \to c}\frac{f(x) - f(c)}{x - c}
+    \end{align*}
+}
+\DeclareFactoid{amazingNotation}{
+Please do not use notation that looks like this:
+
+\begin{proof}
+Suppose that $\mathrm{P} \notin \overline{P}$, then $\exists C_{\textrm{P}}$ such that $\textrm{P} \in C_\textrm{P}$ and $C_\textrm{P} \cap P = \emptyset$.
+Clearly, $\overline{P}^{C} = \cup_{\textrm{P} \in \overline{P}^{C}} C_{\textrm{P}}$. Obviously, the union of open sets is open, so $\overline{P}^{C}$ is open.
+\end{proof}
+}

@@ -1,0 +1,40 @@
+% Credit:
+% factoid code: https://discord.com/channels/268882317391429632/1064643750493691967/1070223034872512582
+\makeatletter
+\ExplSyntaxOn
+\prop_gput:Nnn \g_msg_module_type_prop { factoids } {}
+\seq_new:N \g_factoids_seq
+\cs_generate_variant:Nn \seq_use:Nnnn { Neee }
+\msg_new:nnn { factoids } { unknown } {
+  `#1`~is~not~a~known~factoid!^^J
+  List~of~known~factoids:^^J
+  \@spaces
+  #2
+}
+\keys_define:nn { factoids } {
+  unknown .code:n = {
+    \msg_error:nnxx { factoids } { unknown }
+      { \l_keys_key_str }
+      { \seq_use:Neee \g_factoids_seq { , ^^J \@spaces } { , ^^J \@spaces } { , ^^J \@spaces } }
+  }
+}
+
+\cs_new_protected:Npn \DeclareFactoid #1#2 {
+  \keys_define:nn { factoids } {
+    #1 .code:n = {#2}
+  }
+  \seq_gput_right:Nn \g_factoids_seq {#1}
+}
+
+\cs_new_protected:Npn \@factoid #1 {
+  \keys_set:nn { factoids } {#1}
+}
+\cs_new_nopar:Npn \factoid { \getline \@factoid }
+\ExplSyntaxOff
+
+\begingroup
+\catcode`\^^M=12%
+\gdef\getline#1{\begingroup\catcode`\^^M=12\relax\@getline{#1}}%
+\long\gdef\@getline#1#2^^M{\endgroup#1{#2}}%
+\endgroup%
+\makeatother

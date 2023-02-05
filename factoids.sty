@@ -1,12 +1,28 @@
+\DeclareFactoid{xyp}{
+    Please provide the \textbf{original} question instead of asking 
+    about your attempted solution.
+
+    See: \textcolor{cyan}{https://xyproblem.info/}
+}
+
+\DeclareFactoid{original}{
+If you are seeing this factoid, it means that there is insufficient information to 
+answer your query. 
+
+Other possiblities why you may be seeing this factoid are:
+\begin{itemize}
+    \item The image you have provided is not clear enough to read.
+    \item The question is too broad or vague
+\end{itemize}
+
+Please provide the original question. 
+Please also provide any definitions being used. Any non-standard notation should also be defined.
+}
+
 \DeclareFactoid{riemannsum}{%
 \ensuremath{
     \int^b_a f(x) \dd{x} = \lim_{n \to \infty}~\sum_{k=1}^n \frac{b-a}{n} * f\left(a + \frac{(b-a)*k}{n}\right)
     }
-}
-
-\DeclareFactoid{original}{
-Please provide the original question. Please also provide any definitions being used.
-Any non-standard notation should also be defined.
 }
 
 \DeclareFactoid{derivative}{
@@ -22,8 +38,9 @@ If $f$ is differentiable at $c$ then the derivative of $f$ at $c$ is given by
     \end{align*}
 }
 \DeclareFactoid{amazingNotation}{
-Please do not use notation that looks like this:
-
+\begin{theorem}
+    The closure of a set is closed
+\end{theorem}
 \begin{proof}
 Suppose that $\mathrm{P} \notin \overline{P}$, then $\exists C_{\textrm{P}}$ such that $\textrm{P} \in C_\textrm{P}$ and $C_\textrm{P} \cap P = \emptyset$.
 Clearly, $\overline{P}^{C} = \cup_{\textrm{P} \in \overline{P}^{C}} C_{\textrm{P}}$. Obviously, the union of open sets is open, so $\overline{P}^{C}$ is open.

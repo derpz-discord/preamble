@@ -21,6 +21,9 @@
 \usepackage{tikz-cd}  % For drawing commutative diagrams easily
 \usepackage{color}  % Add some colour to life
 \usepackage{microtype}  % Minature font tweaks
+
+% Stuff I added
+\usepackage{tikz} % tikz lol
 \usepackage{braket} % Make sets
 \usepackage{esdiff} % Write derivatives
 \usepackage{xparse} % for multiple default args
@@ -62,3 +65,17 @@
 
 % super useful fraction code
 \def\f#1/#2.{\frac{#1}{#2}}
+
+% Common things
+\newcommand{\inv}{^{-1}}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+
+% Colorize things
+\newcommand{\tblue}[1]{\textcolor{blue}{#1}}
+\newcommand{\tred}[1]{\textcolor{red}{#1}}
+\newcommand{\tgreen}[1]{\textcolor{green}{#1}}
+\newcommand{\tcyan}[1]{\textcolor{black}{#1}}
+
+% Overbrace and underbrace
+\newcommand{\ob}[2]{\overbrace{#1}^{\text{#2}}}
+\newcommand{\ub}[2]{\underbrace{#1}_{\text{#2}}}

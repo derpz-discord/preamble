@@ -1,6 +1,7 @@
 order:
   - main.sty
   - factoid.package.sty
+  - calculus.sty
   - analysis.sty
   - algebra.sty
   - factoids.sty

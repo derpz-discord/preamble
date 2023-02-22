@@ -1,5 +1,6 @@
-% \ProvidesPackage{preamble} uncomment to use as a package in say overleaf
+% \ProvidesPackage{preamble} % Uncomment on overleaf
 % Required to support mathematical unicode
+% COMMENT ON OVERLEAF
 \usepackage[warnunknown, fasterrors, mathletters]{ucs}
 \usepackage[utf8x]{inputenc}
 
@@ -7,6 +8,7 @@
 \everymath{\displaystyle}
 
 % Use a larger font size
+% DISABLE ON OVERLEAF
 \usepackage[fontsize=14pt]{scrextend}
 
 % Standard mathematical typesetting packages
@@ -17,6 +19,7 @@
 \usepackage{cancel, textcomp}
 \usepackage[mathscr]{euscript}
 \usepackage[nointegrals]{wasysym}
+\usepackage{physics}
 
 % Extras
 \usepackage{tikz-cd}  % For drawing commutative diagrams easily
@@ -30,6 +33,11 @@
 \usepackage{xparse} % for multiple default args
 \usepackage{exercises} % for typesetting exercises
 \setlength{\parindent}{0pt} % fix indentation of exercises
+
+% Uncomment on overleaf
+% \usepackage{hyperref}
+% \usepackage[noabbrev,capitalise,nameinlink]{cleveref}
+% \hypersetup{colorlinks={true},linkcolor={blue},citecolor=green}
 
 % Common shortcuts
 \def\mbb#1{\mathbb{#1}}
@@ -51,10 +59,12 @@
 
 % Some standard theorem definitions
 \newtheorem{theorem}{Theorem}
+% \numberwithin{theorem}{subsection} % Uncomment on overleaf
 \newtheorem{proposition}{Proposition}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{claim}[theorem]{Claim}
 
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
@@ -70,7 +80,7 @@
 
 % Common things
 \newcommand{\inv}{^{-1}}
-\newcommand{\abs}[1]{\lvert #1 \rvert}
+\renewcommand{\abs}[1]{\lvert #1 \rvert}
 \newcommand{\paren}[1]{\ensuremath{\left(#1\right)}}
 
 % Colorize things

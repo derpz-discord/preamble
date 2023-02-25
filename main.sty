@@ -1,15 +1,19 @@
-% \ProvidesPackage{preamble} % Uncomment on overleaf
+% if overleaf
+%\ProvidesPackage{preamble}
+% endif
 % Required to support mathematical unicode
-% COMMENT ON OVERLEAF
+% if not overleaf
 \usepackage[warnunknown, fasterrors, mathletters]{ucs}
 \usepackage[utf8x]{inputenc}
+% endif
 
 % Always typeset math in display style
 \everymath{\displaystyle}
 
 % Use a larger font size
-% DISABLE ON OVERLEAF
+% if not overleaf
 \usepackage[fontsize=14pt]{scrextend}
+% endif
 
 % Standard mathematical typesetting packages
 \usepackage{amsfonts, amsthm, amsmath, amssymb}
@@ -34,10 +38,11 @@
 \usepackage{exercises} % for typesetting exercises
 \setlength{\parindent}{0pt} % fix indentation of exercises
 
-% Uncomment on overleaf
+% if overleaf
 % \usepackage{hyperref}
 % \usepackage[noabbrev,capitalise,nameinlink]{cleveref}
 % \hypersetup{colorlinks={true},linkcolor={blue},citecolor=green}
+% endif
 
 % Common shortcuts
 \def\mbb#1{\mathbb{#1}}
@@ -59,7 +64,9 @@
 
 % Some standard theorem definitions
 \newtheorem{theorem}{Theorem}
-% \numberwithin{theorem}{subsection} % Uncomment on overleaf
+% if overleaf
+% \numberwithin{theorem}{subsection}
+% endif
 \newtheorem{proposition}{Proposition}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -92,3 +99,10 @@
 % Overbrace and underbrace
 \newcommand{\ob}[2]{\ensuremath{\overbrace{#1}^{\text{#2}}}}
 \newcommand{\ub}[2]{\ensuremath{\underbrace{#1}_{\text{#2}}}}
+
+% Piecewise
+\newcommand{\pw}[2]{\ensuremath{#1 = \begin{cases}
+#2
+\end{cases}}}
+
+\newcommand{\piece}[2]{\ensuremath{#1 & \text{if} \, #2 \\}}

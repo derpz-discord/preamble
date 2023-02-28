@@ -17,25 +17,21 @@
 
 % Standard mathematical typesetting packages
 \usepackage{amsfonts, amsthm, amsmath, amssymb}
-\usepackage{mathtools}  % Extension to amsmath
-
-% Symbol and utility packages
+\usepackage{mathtools}
 \usepackage{cancel, textcomp}
 \usepackage[mathscr]{euscript}
 \usepackage[nointegrals]{wasysym}
 \usepackage{physics}
-
-% Extras
-\usepackage{tikz-cd}  % For drawing commutative diagrams easily
+\usepackage{tikz}
+\usepackage{tikz-cd}  % commutative diagrams
 \usepackage{color}  % Add some colour to life
 \usepackage{microtype}  % Minature font tweaks
-
-% Stuff I added
-\usepackage{tikz} % tikz lol
 \usepackage{braket} % Make sets
 \usepackage{esdiff} % Write derivatives
 \usepackage{xparse} % for multiple default args
 \usepackage{exercises} % for typesetting exercises
+\usepackage{enumitem}
+
 \setlength{\parindent}{0pt} % fix indentation of exercises
 
 % if overleaf
@@ -62,14 +58,13 @@
 \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
 
-% Some standard theorem definitions
 \newtheorem{theorem}{Theorem}
 % if overleaf
 % \numberwithin{theorem}{subsection}
 % endif
-\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{claim}[theorem]{Claim}
 
@@ -82,7 +77,10 @@
 \theoremstyle{definition}
 \newtheorem{axiom}[theorem]{Axiom}
 
-% super useful fraction code
+% Formatting
+\newcommand*{\newpara}{\vspace{14pt}}
+
+% Fractions
 \def\f#1/#2.{\frac{#1}{#2}}
 
 % Common things
@@ -101,8 +99,5 @@
 \newcommand{\ub}[2]{\ensuremath{\underbrace{#1}_{\text{#2}}}}
 
 % Piecewise
-\newcommand{\pw}[2]{\ensuremath{#1 = \begin{cases}
-#2
-\end{cases}}}
-
+\newcommand{\pw}[2]{\ensuremath{#1 = \begin{cases}#2\end{cases}}}
 \newcommand{\piece}[2]{\ensuremath{#1 & \text{if} \, #2 \\}}

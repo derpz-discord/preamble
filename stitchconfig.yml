@@ -1,10 +1,11 @@
 order:
   - main.sty
-  - factoid.package.sty
+  - set-theory.sty
   - proofs.sty
   # - calculus.sty
   - analysis.sty
   - algebra.sty
   - topology.sty
+  - factoid.package.sty
   - factoids.sty
   # - trig.factoid.sty
